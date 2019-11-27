@@ -79,6 +79,7 @@ contract ProductReview {
             }
             products[skuId].productOwner.transfer(products[skuId].price-reviewReturn); //Product price transferred to seller"
               msg.sender.transfer(reviewReturn); //1000 weis returned to buyer"   
+              // token transferred to buyer after buying product
               require(tokencontract.transfer(msg.sender,1),"transferred Unsuccessful");
               emit sell (msg.sender , 1);
             
